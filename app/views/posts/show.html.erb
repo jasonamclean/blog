@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<p>Posted <%= time_ago_in_words(@post.created_at) %> ago, on <%= @post.created_at.strftime("%b %d, %Y") %></p>
+
+<%= @post.body %>
+
+<br>
+<br>
+
+<%= link_to 'edit', edit_post_path(@post) %>
+
+<%= link_to 'delete', post_path(@post), :method => :delete %>
