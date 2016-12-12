@@ -1,10 +1,16 @@
-<h1>Posts#index</h1>
+<div class="container">
+	<h1>Posts Home</h1>
 
-<% @posts.each do |post| %>
-	<p><%= link_to post.title, post_path(post) %></p>
+	<%= link_to 'Create Post', new_post_path %>
 
-	<p>Posted: <%= time_ago_in_words(post.created_at) %> ago, on <%= post.created_at.strftime("%B %d, %Y") %></p>
-
-	<%= post.body %><br>
 	<hr>
-<% end %>
+
+	<% @posts.each do |post| %>
+		<p><%= link_to post.title, post_path(post) %></p>
+
+		<p>Posted: <%= time_ago_in_words(post.created_at) %> ago, on <%= post.created_at.strftime("%B %d, %Y") %></p>
+
+		<%= post.body %><br>
+		<hr>
+	<% end %>
+</div>
